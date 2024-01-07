@@ -13,7 +13,7 @@ module.exports.addDateOfBirthAndZodiac = (id, dob) => {
       .exec()
       .then((profile) => {
         console.log("here in zodiac")
-        let date = parseInt(dob.slice(8));
+        let date = parseInt(dob.slice(9, 11));
         console.log("date ", date)
         let month = parseInt(dob.slice(6, 8));
          console.log("month ", month)
