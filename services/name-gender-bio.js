@@ -33,7 +33,6 @@ module.exports.addName = async (id, name) => {
   try {
     const profile = await Profile.find({ userId: id });
   if (profile) {
-    console.log("in update")
      const res = await Profile.updateOne(
       { userId: id },
       {
@@ -43,7 +42,6 @@ module.exports.addName = async (id, name) => {
         $currentDate: { lastUpdated: true },
       }
     );
-//   return res
   }
   } catch (e) {
     console.log(e.message)
