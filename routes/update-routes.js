@@ -82,7 +82,7 @@ module.exports = (app) => {
       //   req.body.month < 10 ? "0" + req.body.month : req.body.month
       // }-${req.body.day < 10 ? "0" + req.body.day : req.body.day}>`;
       dateService
-        .addDateOfBirthAndZodiac(req.user.userId, body.day ) //dobString
+        .addDateOfBirthAndZodiac(req.user.userId, req.body.day ) //dobString
         .then((data) => {
           res.json(data);
         })
