@@ -12,13 +12,9 @@ module.exports.addDateOfBirthAndZodiac = (id, dob) => {
     })
       .exec()
       .then((profile) => {
-        console.log("here in zodiac . dob to slice ", dob)
         let date = parseInt(dob.slice(9, 11));
-        console.log("date ", date)
         let month = parseInt(dob.slice(6, 8));
-         console.log("month ", month)
         let userZodiac = zodiac.getSignByDate({ day: date, month: month });
-        console.log("zodiac ", userZodiac)
         Profile.findOneAndUpdate(
           { userId: id },
           { dob: new Date(dob), zodiacSign: userZodiac.name },
