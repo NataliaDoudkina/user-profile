@@ -5,6 +5,7 @@ let Profile = mongoose.model("profiles");
 // This function adds date of birth and zodiac sign
 // dob param should have format "<YYYY-mm-dd>"
 module.exports.addDateOfBirthAndZodiac = (id, dob) => {
+  console.log("in add zodiac")
   return new Promise((resolve, reject) => {
     Profile.find({
       userId: id,
@@ -14,6 +15,7 @@ module.exports.addDateOfBirthAndZodiac = (id, dob) => {
         let date = parseInt(dob.slice(9, 11));
         let month = parseInt(dob.slice(6, 8));
         let userZodiac = zodiac.getSignByDate({ day: date, month: month });
+        console.log("zodiac ", userZodiac)
         Profile.findOneAndUpdate(
           { userId: id },
           { dob: new Date(dob), zodiacSign: userZodiac.name },
