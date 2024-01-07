@@ -77,6 +77,7 @@ module.exports = (app) => {
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
       //modifying date into <YYYY-mm-dd> format
+      console.log("body ", req.body)
       let dobString = `<${req.body.year}-${
         req.body.month < 10 ? "0" + req.body.month : req.body.month
       }-${req.body.day < 10 ? "0" + req.body.day : req.body.day}>`;
