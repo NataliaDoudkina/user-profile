@@ -13,7 +13,6 @@ const profileSchema = new Schema(
     gender: {
       type: String,
       enum: ["M", "F"],
-      default: "F",
     },
     reason: [String],
     location: {
