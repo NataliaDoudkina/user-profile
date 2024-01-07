@@ -12,7 +12,6 @@ const profileSchema = new Schema(
     zodiacSign: String,
     gender: {
       type: String,
-      enum: ["M", "F"],
     },
     reason: [String],
     location: {
