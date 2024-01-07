@@ -10,9 +10,7 @@ const profileSchema = new Schema(
     name: String,
     dob: Date,
     zodiacSign: String,
-    gender: {
-      type: String,
-    },
+   
     reason: [String],
     location: {
       type: Map,
